@@ -1,0 +1,106 @@
+/* تنسيقات الفوتر الجديد */
+.new-footer {
+    background-color: #1e2a3a;
+    color: #e0e0e0;
+    padding: 40px 20px;
+    text-align: right;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    margin-top: 50px;
+}
+
+.new-footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.new-footer-section {
+    margin-bottom: 30px;
+    flex: 1;
+    min-width: 250px;
+    padding: 0 15px;
+}
+
+.new-footer-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.new-footer-academy-title {
+    color: #d4af37;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.new-footer-description {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.new-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.new-footer-links li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.new-footer-links li:before {
+    content: "•";
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+.new-footer-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.new-footer-links a:hover {
+    color: #ffffff;
+}
+
+.new-footer-contact {
+    margin-bottom: 10px;
+}
+
+.new-footer-divider {
+    border-top: 1px solid #2d3a4a;
+    margin: 20px 0;
+}
+
+.new-footer-copyright {
+    text-align: center;
+    padding-top: 20px;
+    color: #a0a0a0;
+}
+
+/* تجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .new-footer-container {
+        flex-direction: column;
+    }
+    
+    .new-footer-section {
+        text-align: center;
+    }
+    
+    .new-footer-links li {
+        justify-content: center;
+    }
+    
+    .new-footer-links li:before {
+        margin-left: 5px;
+    }
+}

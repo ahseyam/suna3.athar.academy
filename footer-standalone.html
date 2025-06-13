@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معسكرات صُنَّاع الموهبة - أكاديمية صُنَّاع الأثَر</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* تنسيقات الفوتر المباشرة */
+        .direct-footer {
+            background-color: #1e2a3a;
+            color: #e0e0e0;
+            padding: 40px 20px;
+            text-align: right;
+            direction: rtl;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 50px;
+            display: block;
+            width: 100%;
+            position: relative;
+            z-index: 1000;
+            clear: both;
+        }
+        
+        .direct-footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .direct-footer-section {
+            margin-bottom: 30px;
+            flex: 1;
+            min-width: 250px;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        
+        .direct-footer-title {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .direct-footer-academy-title {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .direct-footer-description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .direct-footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .direct-footer-links li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .direct-footer-links li:before {
+            content: "•";
+            color: #ffffff;
+            margin-left: 10px;
+        }
+        
+        .direct-footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .direct-footer-links a:hover {
+            color: #ffffff;
+        }
+        
+        .direct-footer-contact {
+            margin-bottom: 10px;
+        }
+        
+        .direct-footer-divider {
+            border-top: 1px solid #2d3a4a;
+            margin: 20px 0;
+            clear: both;
+            width: 100%;
+        }
+        
+        .direct-footer-copyright {
+            text-align: center;
+            padding-top: 20px;
+            color: #a0a0a0;
+            width: 100%;
+        }
+        
+        /* تجاوب مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .direct-footer-container {
+                flex-direction: column;
+            }
+            
+            .direct-footer-section {
+                text-align: center;
+            }
+            
+            .direct-footer-links li {
+                justify-content: center;
+            }
+            
+            .direct-footer-links li:before {
+                margin-left: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="direct-footer">
+        <div class="direct-footer-container">
+            <div class="direct-footer-section">
+                <h3 class="direct-footer-academy-title">أكاديمية صُنَّاع الأثَر</h3>
+                <p class="direct-footer-description">منصة التعليم والتدريب الرائدة في المملكة العربية السعودية</p>
+            </div>
+            
+            <div class="direct-footer-section">
+                <h4 class="direct-footer-title">روابط سريعة</h4>
+                <ul class="direct-footer-links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="store.html">المتجر</a></li>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="direct-footer-section">
+                <h4 class="direct-footer-title">تواصل معنا</h4>
+                <div class="direct-footer-contact">00966550907874</div>
+                <div class="direct-footer-contact">00966595940762</div>
+                <div class="direct-footer-contact">00966545369311</div>
+                <div class="direct-footer-contact">sonna3.al.athar@gmail.com</div>
+            </div>
+        </div>
+        
+        <div class="direct-footer-divider"></div>
+        
+        <div class="direct-footer-copyright">
+            © 2024 أكاديمية صناع الأثر. جميع الحقوق محفوظة.
+        </div>
+    </div>
+</body>
+</html>

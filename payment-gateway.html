@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الدفع - أكاديمية صُنَّاع الأثَر</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://acfntctu.manus.space/assets/icons/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/new-footer.css">
+    <link rel="stylesheet" href="css/bank-transfer.css">
+    <link rel="stylesheet" href="css/header-fix.css">
+    
+    <!-- JavaScript -->
+    <script src="js/mobile-nav.js" defer></script>
+    <script src="js/user-manager.js" defer></script>
+    <style>
+        .payment-gateway {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .payment-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .payment-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .payment-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .payment-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .order-summary {
+            margin-bottom: 2rem;
+        }
+
+        .order-summary h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-item-title {
+            font-weight: 500;
+            color: #555;
+        }
+
+        .summary-item-value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .total-row {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 2px solid #eee;
+        }
+
+        .payment-methods {
+            margin-bottom: 2rem;
+        }
+
+        .payment-methods h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .payment-method-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .payment-method-option {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method-option:hover {
+            border-color: #764ba2;
+            transform: translateY(-3px);
+        }
+
+        .payment-method-option.selected {
+            border-color: #764ba2;
+            background-color: rgba(118, 75, 162, 0.05);
+        }
+
+        .payment-method-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .payment-method-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .payment-form {
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #764ba2;
+            outline: none;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3);
+        }
+
+        .secure-payment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .secure-payment i {
+            margin-left: 0.5rem;
+            color: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="index.html" class="header-logo">
+                    <img src="https://acfntctu.manus.space/assets/images/logo.png" alt="أكاديمية صُنَّاع الأثَر">
+                </a>
+
+                <!-- Mobile Navigation Toggle -->
+                <button class="mobile-nav-toggle" id="mobileNavToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+
+                        <li class="nav-item dropdown">
+                            <a href="index.html#" class="nav-link dropdown-toggle">
+                                <i class="fas fa-graduation-cap"></i> البرامج التدريبية <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="sunaa-mawhiba-camps.html" class="dropdown-link">
+                                    <i class="fas fa-campground"></i> معسكرات صُنّاع الموهبة
+                                </a>
+                                <a href="qudurat.html" class="dropdown-link">
+                                    <i class="fas fa-brain"></i> دورة القدرات العامة
+                                </a>
+                                <a href="tahsili.html" class="dropdown-link">
+                                    <i class="fas fa-book"></i> دورة التحصيلي
+                                </a>
+                                <a href="mawhiba.html" class="dropdown-link">
+                                    <i class="fas fa-star"></i> مقياس موهبة
+                                </a>
+                                <a href="step.html" class="dropdown-link">
+                                    <i class="fas fa-language"></i> اختبار STEP
+                                </a>
+                                <a href="professional-license.html" class="dropdown-link">
+                                    <i class="fas fa-certificate"></i> الرخصة المهنية
+                                </a>
+                                <a href="exam-night-review.html" class="dropdown-link">
+                                    <i class="fas fa-moon"></i> مراجعة ليلة الاختبار
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="index.html#" class="nav-link dropdown-toggle">
+                                <i class="fas fa-building"></i> خدمات المؤسسات <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="host-programs.html" class="dropdown-link">
+                                    <i class="fas fa-building"></i> استضافة البرامج الحضورية
+                                </a>
+                                <a href="transportation-services.html" class="dropdown-link">
+                                    <i class="fas fa-bus"></i> خدمات النقل الآمن
+                                </a>
+                                <a href="join-team.html" class="dropdown-link">
+                                    <i class="fas fa-users"></i> انضم إلى فريق العمل
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Cart Button -->
+                    <button class="cart-button" onclick="window.location.href='cart.html'">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <a href="index.html" class="mobile-nav-logo">
+            <img src="https://acfntctu.manus.space/assets/images/logo.png" alt="أكاديمية صُنَّاع الأثَر">
+        </a>
+        
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="store.html">المتجر</a></li>
+            <li class="mobile-dropdown">
+                <span class="mobile-dropdown-toggle">البرامج التدريبية <i class="fas fa-chevron-down"></i></span>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="sunaa-mawhiba-camps.html">معسكرات صُنّاع الموهبة</a></li>
+                    <li><a href="qudurat.html">القدرات</a></li>
+                    <li><a href="tahsili.html">التحصيلي</a></li>
+                    <li><a href="mawhiba.html">موهبة</a></li>
+                    <li><a href="step.html">STEP</a></li>
+                    <li><a href="professional-license.html">الرخصة المهنية</a></li>
+                </ul>
+            </li>
+            <li class="mobile-dropdown">
+                <span class="mobile-dropdown-toggle">خدمات المؤسسات <i class="fas fa-chevron-down"></i></span>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="host-programs.html">استضافة البرامج</a></li>
+                    <li><a href="transportation-services.html">خدمات النقل</a></li>
+                    <li><a href="join-team.html">انضم للفريق</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="payment-gateway">
+        <div class="payment-container">
+            <div class="payment-header">
+                <h1>بوابة الدفع الآمن</h1>
+                <p>أكمل عملية الدفع بأمان لإتمام تسجيلك في معسكر صُنَّاع الموهبة</p>
+            </div>
+            
+            <!-- قسم التحويل البنكي -->
+            <div class="bank-transfer-section">
+                <h3 class="bank-transfer-title">الدفع عن طريق التحويل البنكي</h3>
+                <div class="bank-transfer-content">
+                    <div class="bank-info">
+                        <div class="account-details">
+                            <div class="account-row">
+                                <div class="account-label">رقم الحساب:</div>
+                                <div class="account-value">20200001000608653944</div>
+                            </div>
+                            <div class="account-row">
+                                <div class="account-label">الآيبان:</div>
+                                <div class="account-value">SA8980000202608016539344</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bank-instructions">
+                            <h4>تعليمات التحويل:</h4>
+                            <ul>
+                                <li>قم بتحويل المبلغ المطلوب إلى الحساب البنكي المذكور أعلاه.</li>
+                                <li>احتفظ بإيصال التحويل البنكي.</li>
+                                <li>أرسل صورة من إيصال التحويل عبر واتساب على الرقم: <span class="whatsapp-number">00966550907874</span></li>
+                                <li>أو يمكنك التوجه مباشرة إلى مقر المعسكر الصيفي.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>مقر المعسكر الصيفي</h4>
+                                    <p class="location-details">مدارس العبير الأهلية - القسم الثانوي<br>حي طويق بجوار القرية الشعبية</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>واتساب التواصل</h4>
+                                    <p class="whatsapp-number">00966550907874</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bank-qr">
+                        <img src="images/bank-qr.jpg" alt="باركود الحساب البنكي" />
+                        <p>امسح الباركود للتحويل السريع</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- كود الفوتر الجديد -->
+    <footer class="new-footer">
+        <div class="new-footer-container">
+            <div class="new-footer-section">
+                <h3 class="new-footer-academy-title">أكاديمية صُنَّاع الأثَر</h3>
+                <p class="new-footer-description">منصة التعليم والتدريب الرائدة في المملكة العربية السعودية</p>
+            </div>
+            
+            <div class="new-footer-section">
+                <h4 class="new-footer-title">روابط سريعة</h4>
+                <ul class="new-footer-links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="store.html">المتجر</a></li>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="new-footer-section">
+                <h4 class="new-footer-title">تواصل معنا</h4>
+                <div class="new-footer-contact">00966550907874</div>
+                <div class="new-footer-contact">00966595940762</div>
+                <div class="new-footer-contact">00966545369311</div>
+                <div class="new-footer-contact">sonna3.al.athar@gmail.com</div>
+            </div>
+        </div>
+        
+        <div class="new-footer-divider"></div>
+        
+        <div class="new-footer-copyright">
+            © 2024 أكاديمية صناع الأثر. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for payment method selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const paymentOptions = document.querySelectorAll('.payment-method-option');
+            
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Complete payment button action
+            const payButton = document.querySelector('.btn-primary');
+            payButton.addEventListener('click', function() {
+                alert('تم إتمام عملية الدفع بنجاح! سيتم توجيهك إلى صفحة التأكيد.');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

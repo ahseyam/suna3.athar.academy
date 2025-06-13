@@ -1,0 +1,135 @@
+/* إصلاح تنسيق الفوتر في صفحة معسكر صناع الموهبة */
+.new-footer {
+    background-color: #1e2a3a !important;
+    color: #e0e0e0 !important;
+    padding: 40px 20px !important;
+    text-align: right !important;
+    direction: rtl !important;
+    font-family: 'Cairo', sans-serif !important;
+    margin-top: 50px !important;
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1000 !important;
+    clear: both !important;
+}
+
+.new-footer-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.new-footer-section {
+    margin-bottom: 30px !important;
+    flex: 1 !important;
+    min-width: 250px !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
+}
+
+.new-footer-title {
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 20px !important;
+    font-weight: bold !important;
+}
+
+.new-footer-academy-title {
+    color: #d4af37 !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 15px !important;
+    font-weight: bold !important;
+}
+
+.new-footer-description {
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+}
+
+.new-footer-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.new-footer-links li {
+    margin-bottom: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.new-footer-links li:before {
+    content: "•" !important;
+    color: #ffffff !important;
+    margin-left: 10px !important;
+}
+
+.new-footer-links a {
+    color: #e0e0e0 !important;
+    text-decoration: none !important;
+    transition: color 0.3s !important;
+}
+
+.new-footer-links a:hover {
+    color: #ffffff !important;
+}
+
+.new-footer-contact {
+    margin-bottom: 10px !important;
+}
+
+.new-footer-divider {
+    border-top: 1px solid #2d3a4a !important;
+    margin: 20px 0 !important;
+    clear: both !important;
+    width: 100% !important;
+}
+
+.new-footer-copyright {
+    text-align: center !important;
+    padding-top: 20px !important;
+    color: #a0a0a0 !important;
+    width: 100% !important;
+}
+
+/* تجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .new-footer-container {
+        flex-direction: column !important;
+    }
+    
+    .new-footer-section {
+        text-align: center !important;
+    }
+    
+    .new-footer-links li {
+        justify-content: center !important;
+    }
+    
+    .new-footer-links li:before {
+        margin-left: 5px !important;
+    }
+}
+
+/* إلغاء أي تأثير من أنماط أخرى */
+.page-footer, .page-footer-mobile {
+    display: none !important;
+}
+
+/* إصلاح مشكلة التداخل مع العناصر الأخرى */
+body {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+}
+
+    .camp-registration {
+        flex: 1 0 auto !important;
+    }
+
+.new-footer {
+    flex-shrink: 0 !important;
+}
