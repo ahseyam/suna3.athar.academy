@@ -53,7 +53,7 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a href="sunaa-mawhiba-camps.html" class="dropdown-link">
-                                    <i class="fas fa-campground"></i> معسكرات عالم المواهب
+                                    <i class="fas fa-campground"></i> معسكرات معسكر عالم المواهب
                                 </a>
                                 <a href="qudurat.html" class="dropdown-link">
                                     <i class="fas fa-brain"></i> دورة القدرات العامة
@@ -163,7 +163,7 @@
                 </div>
                 <div class="mobile-nav-dropdown-menu">
                     <a href="sunaa-mawhiba-camps.html" class="mobile-nav-dropdown-link">
-                        <i class="fas fa-campground"></i> معسكرات عالم المواهب
+                        <i class="fas fa-campground"></i> معسكرات معسكر عالم المواهب
                     </a>
                     <a href="qudurat.html" class="mobile-nav-dropdown-link">
                         <i class="fas fa-brain"></i> دورة القدرات العامة
@@ -1363,9 +1363,7 @@
         <div class="dialog-body" part="body">
           <slot></slot>
         </div>
-        <div class="dialog-footer" part="footer">
-          <slot name="footer"></slot>
-        </div>
+        
       </dialog>
     `;St(e,this._shadowRoot)}}class gi extends HTMLElement{constructor(){super(),this.anchor=null,this.popupContent=null,this.isOpen=!1,this.scrollListener=null,this._ref=null,this._customClass="",this.mousePosition=null,this.gapSize=10,this.attachShadow({mode:"open"}),this.render()}static get observedAttributes(){return["open","ref","class"]}connectedCallback(){this.scrollListener=()=>{this.isOpen&&this.updatePosition()},window.addEventListener("scroll",this.scrollListener,!0),this._ref&&this._ref(this)}disconnectedCallback(){this.scrollListener&&window.removeEventListener("scroll",this.scrollListener,!0),this.destroy()}attributeChangedCallback(e,n,l){e==="open"?(this.isOpen=l!==null,this.render(),this.isOpen&&setTimeout(()=>this.updatePosition(),0)):e==="ref"||e==="class"&&(this._customClass=l||"",this.render())}set ref(e){this._ref=e,this.isConnected&&e(this)}set customClass(e){this._customClass=e,this.setAttribute("class",e),this.render()}get customClass(){return this._customClass}setAnchor(e){this.anchor=e,this.isOpen&&this.updatePosition()}open(e){if(this.isOpen=!0,this.setAttribute("open",""),e){this.mousePosition={x:e.clientX,y:e.clientY};const n=e.target;n&&this.setAnchor(n)}else this.mousePosition=null;this.render(),setTimeout(()=>this.updatePosition(),0)}close(){this.isOpen=!1,this.mousePosition=null,this.removeAttribute("open"),this.render()}updatePosition(){if(!this.popupContent)return;const e=this.popupContent.getBoundingClientRect();let n,l,i="bottom";if(this.anchor)n=this.anchor.getBoundingClientRect().bottom+this.gapSize;else if(this.mousePosition)n=this.mousePosition.y+this.gapSize;else{n=window.innerHeight/2-e.height/2,l=window.innerWidth/2-e.width/2,this.updatePopupStyles(n,l,i);return}if(this.mousePosition)l=this.mousePosition.x-e.width/2;else if(this.anchor){const o=this.anchor.getBoundingClientRect();l=o.left+o.width/2-e.width/2}else l=window.innerWidth/2-e.width/2;l+e.width>window.innerWidth&&(l=window.innerWidth-e.width-10),l<10&&(l=10),n+e.height>window.innerHeight&&(i="top",this.anchor?n=this.anchor.getBoundingClientRect().top-e.height-this.gapSize:this.mousePosition&&(n=this.mousePosition.y-e.height-this.gapSize),n<0&&(n=window.innerHeight/2-e.height/2,i="bottom")),this.updatePopupStyles(n,l,i)}updatePopupStyles(e,n,l){this.popupContent&&(this.popupContent.style.position="fixed",this.popupContent.style.top=`${e}px`,this.popupContent.style.left=`${n}px`,this.popupContent.setAttribute("data-position",l))}render(){const e=M`
 			<style>
@@ -2528,41 +2526,22 @@ Visit https://www.docs.developers.amplitude.com/data/sdks/browser-2/#tracking-de
 			</style>
 			${e()}`}handleToggleEditMode(){Je.viewType==="default"?(Je.setViewType("edit"),this.se.toggleEditMode(),On.showToast({title:"You're now editing - all changes auto-save",variant:"success"}),Bd({eventName:"edit_click",extData:{type:"space"}})):(Je.setViewType("default"),this.se.toggleToPreviewMode(),On.showToast({title:"Switched to preview mode",variant:"success"}))}}function L(t){return`footer-toolbar-${t}`}class Qm extends Zn{constructor(e){super(e,!1),this.container=e,this.hasPrivilege=!1,this.isRestoring=!1,this.isShowHistoryBtn=!1,this.isFolded=!1,this.isFolded=localStorage.getItem(co.embedClosed)==="true",this.init()}get template(){const e=()=>{const n=M`<div class=${L("fold-btn")} @click=${this.toggleFolded.bind(this)}>${T1}</div>`;if(!this.hasPrivilege)return M`
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col about-us">
-                    <h3>أكاديمية صُنَّاع الأثَر</h3>
-                    <p>أكاديمية متخصصة في تقديم الدورات التدريبية والبرامج التعليمية المتميزة في مجالات القدرات والتحصيلي و STEP، بالإضافة إلى معسكرات صُنَّاع الموهبة التي تهدف إلى تنمية مهارات الشباب.</p>
-                </div>
-                <div class="footer-col quick-links">
-                    <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="store.html">المتجر</a></li>
-                        <li><a href="about-us.html">من نحن</a></li>
-                        <li><a href="contact-us.html">اتصل بنا</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col contact-info">
-                    <h3>تواصل معنا</h3>
-                    <p><i class="fas fa-phone"></i> +966 55 463 6921</p>
-                    <p><i class="fas fa-envelope"></i> info@alathar.academy</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 أكاديمية صُنَّاع الأثَر. جميع الحقوق محفوظة.</p>
-            </div>
-        </div>
-    </footer>
+    
 
 
 
+
+
+
+
+
+
+
+
+
+
+<script src="js/load_footer.js" defer></script>
+<script src="js/load_footer.js" defer></script>
 </body>
 </html>
 
