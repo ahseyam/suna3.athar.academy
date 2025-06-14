@@ -1,0 +1,98 @@
+/* إصلاح مشاكل الهيدر */
+.header {
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* منع تكرار الشعار */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+/* إصلاح القائمة الرئيسية */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* تحسين عرض القوائم المنسدلة */
+.dropdown-menu {
+    width: auto;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+/* إصلاح مشكلة تكرار الشعار في الهيدر */
+.duplicate-logo {
+    display: none !important;
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 992px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .main-nav {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .nav-list {
+        justify-content: space-around;
+        width: 100%;
+    }
+}
+
+/* إخفاء العناصر المكررة في الهيدر */
+.header img:nth-of-type(2) {
+    display: none !important;
+}
+
+/* تنظيم عناصر القائمة */
+.header .nav-item {
+    white-space: nowrap;
+}
+
+/* تحسين مظهر القائمة المنسدلة */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* إصلاح مشكلة تداخل العناصر */
+.header-actions {
+    z-index: 10;
+}

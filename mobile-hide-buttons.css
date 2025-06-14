@@ -1,0 +1,25 @@
+/* إخفاء أزرار الدخول وسلة التسوق في واجهة الجوال فقط */
+@media (max-width: 768px) {
+    /* إخفاء زر سلة التسوق */
+    .cart-button {
+        display: none !important;
+    }
+    
+    /* إخفاء أزرار الدخول والتسجيل في الهيدر */
+    .auth-buttons {
+        display: none !important;
+    }
+    
+    /* إخفاء أزرار الدخول والتسجيل المنفصلة في الصفحة */
+    .login-button, .signup-button, 
+    a[href="login.html"], a[href="signup.html"],
+    .mobile-auth-buttons {
+        display: none !important;
+    }
+    
+    /* إخفاء أي عناصر أخرى تحتوي على كلمة "دخول" أو "سجل" في واجهة الجوال */
+    [class*="login"], [class*="signup"], 
+    [class*="auth"], [class*="cart"] {
+        display: none !important;
+    }
+}
